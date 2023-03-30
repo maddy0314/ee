@@ -1,0 +1,33 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block styles %}
+    <style>
+      img {
+        width: 600px;
+      }
+    </style>
+{% endblock %}
+
+{% block title %}
+    Introduction
+{% endblock %}
+
+{% block content %}
+    <p>
+        <strong><u>Practice Question</u></strong>: <br>
+        <br>
+        First, we will do a practice five-integer addition problem. Please calculate the sum of the five integers on
+        your screen using only mental math and/or your scratch paper, then type your answer in the “Answer” field and
+        click the “Submit” button. If you have any questions or problems, please raise your hand.
+    </p>
+
+    <div>
+        <img src="{{ static 'ee_practicequestion.png' }}"/>
+    </div>
+
+    {% formfield player.pq %}
+
+    {% next_button %}
+
+{% endblock %}

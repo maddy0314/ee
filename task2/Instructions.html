@@ -1,0 +1,32 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Task 2: Tournament
+{% endblock %}
+
+{% block content %}
+    <p>
+        <strong><u>Instructions</u></strong>: <br>
+        <br>
+        Thank you for completing Task 1. Now, we will start Task 2 (Tournament). As before, you will be asked to compute
+        the total of the five numbers on screen, type your answer in the “Answer” field, and click “Submit” to
+        automatically move to the next question. Below the answer field, the number of questions you’ve answered
+        correctly will be displayed. <br>
+        <br>
+        The main difference between Task 1 (Piece Rate) and this Task 2 (Tournament) is the compensation scheme. If this
+        task is selected for compensation, the compensation will be calculated as follows: <br>
+        <br>
+        After all participants have completed this task, we will randomly place you into a group of four participants.
+        The participant in each group who solved the highest number of correct problems during Task 2 will receive 4 ECU
+        per correct answer. The three other participants in each group will receive 0 ECU. In the case that multiple
+        participants answer the highest number of questions correctly, one of the highest scorers will be randomly
+        chosen to be compensated 4 ECU per correct answer and the others will receive 0 ECU. <br>
+        <br>
+        Are there any questions?
+
+    </p>
+
+    {% next_button %}
+
+{% endblock %}

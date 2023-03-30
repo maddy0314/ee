@@ -1,0 +1,35 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Introduction
+{% endblock %}
+
+{% block content %}
+    <p>
+        <strong><u>Instructions</u></strong>: <br>
+        <br>
+        Welcome. Please turn off all electrical devices and put them away. During the experiment, you will not be
+        allowed to talk to other participants. If you have any questions regarding the experiment or what is expected of
+        you, please raise your hand and one of the experimenters will come to assist you. You will be asked to
+        participate in a series of tasks. At the end of the experiment, you will privately be paid your reward in cash
+        based on the payment schemes detailed during the experiment. This experiment is compensated in ECU (Experimental
+        Currency Units) using the conversion rate 1 ECU = $0.10 USD. You will receive a show-up fee of 50 ECU for
+        participating in this experiment. <br>
+        <br>
+        During this experiment, you will participate in four tasks. you will complete three tasks consisting of math
+        problems. In each task, you will be given 2 minutes to solve as many math problems as possible. Each math
+        problem asks the sum of 5 random integers within the range [10,99], which will be shown on your screen. You may
+        not use a calculator, but scratch paper and a pencil are permitted. If you do not have scratch paper or a
+        pencil, raise your hand and they will be provided to you. <br>
+        <br>
+        At the end of the experiment, one of the three tasks will be randomly chosen to determine additional
+        compensation, so it is in your interest to do your best on all three tasks. <br>
+        <br>
+        Are there any questions?
+
+    </p>
+
+    {% next_button %}
+
+{% endblock %}

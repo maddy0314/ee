@@ -1,0 +1,40 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Task 3: Free Choice
+{% endblock %}
+
+{% block content %}
+    <p>
+        <strong><u>Instructions</u></strong>: <br>
+        <br>
+        Thank you for completing task 2. Now we will start task 3 (choice) As before, For each problem, compute the
+        total of the five numbers onscreen, type your answer in the “Answer” field, and click “Submit” to automatically
+        move to the next question. Below the answer field, the number of questions you’ve answered correctly is
+        displayed. <br>
+        <br>
+
+        The main difference between Task 3 (Choice) and the previous two tasks is that, in this task, you are given the
+        option to choose the compensation scheme that you would like to use.  <br>
+        Before proceeding to the problems, on the next page, we will ask you to select whether you would like Task 3 to
+        be compensated according to the payment scheme from Task 1 (Piece Rate) or Task 2 (Tournament). <br>
+        <br>
+
+        To review: <br>
+        The <strong><u>Task 1 (Piece Rate)</u></strong> scheme paid 1 ECU per correct answer <br>
+        The <strong><u>Task 2 (Tournament)</u></strong> paid 4 ECU per correct answer only to the highest scorer in each
+        group and 0 ECU to all other group members. <br>
+        <br>
+
+        If this task is chosen for compensation, you will be paid according to your compensation scheme choice you make
+        on the next page. <br>
+        <br>
+
+        Are there any questions?
+
+    </p>
+
+    {% next_button %}
+
+{% endblock %}

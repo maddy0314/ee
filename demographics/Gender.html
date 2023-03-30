@@ -1,0 +1,15 @@
+{{ block title }}Survey{{ endblock }}
+{{ block content }}
+
+    <p>What is your race? Select all that apply.</p>
+    {{ for field in C.GENDER }}
+    <label>
+        <input type="checkbox" name="{{ field.name }}" value="1">
+        {{ field.label }}
+    </label><br>
+    {{ endfor }}
+
+    <p>
+    {{ next_button }}
+    </p>
+{{ endblock }}

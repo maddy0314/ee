@@ -1,0 +1,139 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Task 2
+{% endblock %}
+
+{% block styles %}
+    <style type="text/css">
+        table.math_question {
+            width: 500px;
+            height: 100px;
+            text-align: center;
+            background-color: #000;
+            font-size: 2em;
+            border-collapse: unset;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .math_question td {
+            width: 100px;
+            height: 100px;
+            background-color: #ccc;
+        }
+
+        .vspace {
+            margin-top: 1em;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        a {
+            formatting: inline-block;
+            margin-left: 500px;
+        }
+        </style>
+{% endblock %}
+
+{% block content %}
+
+    <div class="center vspace">
+        <p>
+
+        </p>
+
+        <table class="math_question" id="mquestion"></table>
+
+        {{ formfield 'answer' }}
+    </div>
+
+    <button type="button"  onclick="clickFunction(qs)">Answer</button>
+
+    <a>Number correct: <span id="myCorrect"></span></a>
+
+    <input type="hidden" name="t2_rawscore" id="t2_rawscore" value=0>
+
+{% endblock %}
+
+{% block scripts %}
+    <script type="text/javascript">
+         class Question {
+            constructor(table_id) {
+                this.table = document.getElementById(table_id);
+                this.elements = [];
+                this.answer = 0;
+                for (let i = 0; i < 5; i++) {
+                    this.elements[i] = Math.floor(Math.random() * 100);
+                    if (this.elements[i] < 10) {
+                        this.elements[i] = this.elements[i] + Math.floor(Math.random() * 91);
+                    }
+                    this.answer = this.answer + this.elements[i];
+                }
+                this.enabled = true;
+                this.draw();
+            }
+
+            newquestion() {
+                this.elements = [];
+                this.answer = 0;
+                for (let i = 0; i < 5; i++) {
+                    this.elements[i] = Math.floor(Math.random() * 100);
+                    if (this.elements[i] < 10) {
+                        this.elements[i] = this.elements[i] + Math.floor(Math.random() * 91);
+                    }
+                    this.answer = this.answer + this.elements[i];
+                }
+                this.draw();
+            }
+
+            clear() {
+                const l = this.table.rows.length;
+                for (let r = 0; r < l; r++) {
+                    this.table.deleteRow(-1);
+                }
+            }
+
+            draw() {
+                this.clear();
+                    let row = this.table.insertRow(-1);
+                    for (let c = 0; c < this.elements.length; c++) {
+                        let cell = row.insertCell(-1);
+                        let value = this.elements[c];
+                        cell.innerHTML = value;
+                    }
+            }
+         }
+
+         function clickFunction(ques) {
+            console.log("Pressed");
+            let thisans = forminputs.answer.value;
+            if (thisans == ques.answer) {
+                numcorrect = parseInt(document.getElementById("t2_rawscore").value);
+                document.getElementById("t2_rawscore").value = numcorrect + 1;
+            }
+            printer(ques);
+            if (thisans == ques.answer) {
+                ques.newquestion();
+            }
+         }
+
+         function printer(ques) {
+             document.getElementById("myCorrect").innerHTML = $('#t2_rawscore').val();
+         }
+
+        // Game
+
+        let qs = new Question('mquestion');
+        console.log(qs.elements);
+        qs.draw();
+        printer(qs);
+
+    </script>
+{% endblock %}

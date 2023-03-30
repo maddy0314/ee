@@ -1,0 +1,29 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Task 1: Piece Rate
+{% endblock %}
+
+{% block content %}
+    <p>
+        <strong><u>Instructions</u></strong>: <br>
+        <br>
+        We will first start with Task 1 (Piece Rate). In this task, you will be given 2 minutes to solve as many math
+        problems as possible. This is the first set of five-integer addition problems. For each problem, compute the
+        total of the five numbers on screen, type your answer in the “Answer” field, and click “Submit” to automatically
+        move to the next question. Below the answer field, the number of questions you’ve answered correctly is
+        displayed. <br>
+        <br>
+        If this task is selected for compensation, you will receive a piece rate of 1 ECU per correct answer. <br>
+        <br>
+        Are there any questions? <br>
+        <br>
+        Please notice that when you click next, the timer will start and you will have X minutes to do as many additional problems as you can.
+        When you are ready, please click next to start.
+
+    </p>
+
+    {% next_button %}
+
+{% endblock %}
