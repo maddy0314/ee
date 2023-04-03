@@ -18,7 +18,7 @@ class Group(BaseGroup):
 class Player(BasePlayer):
     rating = models.IntegerField(
         widget=widgets.RadioSelect,
-        choices=[1, 2, 3, 4]
+        choices=['1', '2', '3', '4']
     )
 
 
