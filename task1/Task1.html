@@ -116,9 +116,7 @@
                 document.getElementById("t1_rawscore").value = numcorrect + 1;
             }
             printer(ques);
-            if (thisans == ques.answer) {
-                ques.newquestion();
-            }
+            ques.newquestion();
          }
 
          function printer(ques) {
