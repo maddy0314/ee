@@ -43,4 +43,4 @@ class PracticeQuestion(Page):
         player.add_payoff()
 
 
-page_sequence = [Disclaimer, Intro, PracticeQuestion]
+page_sequence = [Intro, PracticeQuestion]
