@@ -34,7 +34,7 @@ class Task1(Page):
     form_model = 'player'
     form_fields = ['answer',
                    't1_rawscore']
-    timeout_seconds = 60
+    timeout_seconds = 120
 
     def before_next_page(player, timeout_happened):
         player.add_payoff()

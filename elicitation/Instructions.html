@@ -1,0 +1,27 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Task 4
+{% endblock %}
+
+{% block content %}
+    <p>
+        You do not need to complete any math problems in this task. Below, we ask you to guess your rank in Task 2
+        (Tournament). <br>
+        <br>
+
+        Remember that in Task 2 (Tournament), we randomly put you in a group of four and you solved as many addition
+        problems as you could within 2 minutes. Now, we want to know what you think your rank among the four person
+        group was. <br>
+        <br>
+
+        For this survey, 1 indicates you having the highest score and 4 indicates you having the lowest score in the
+        group. If your guess is correct, you will earn an additional 2 ECU. In case of a tie, every answer that could be
+        considered correct will be rewarded as correct. For example, if the top two participants correctly answered the
+        same number of questions, both participants could guess either 1 or 2 and be rewarded for a correct answer.
+    </p>
+
+    {% next_button %}
+
+{% endblock %}

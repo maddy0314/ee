@@ -1,0 +1,17 @@
+{{ block title }}Survey{{ endblock }}
+{{ block content }}
+
+    <p>Choose your predicted rank now:</p>
+    <p>
+        Best &nbsp;
+        {{ for choice in form.rating }}
+            {{ choice }}
+            &nbsp;
+        {{ endfor }}
+        &nbsp; Worst
+    </p>
+
+    <p>
+    {{ next_button }}
+    </p>
+{{ endblock }}
